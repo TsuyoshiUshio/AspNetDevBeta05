@@ -22,7 +22,9 @@ Vagrant.configure(2) do |config|
     end
     master.vm.provision "file", source: "common_ubuntu.sh", destination: "/tmp/user-shell/common_ubuntu.sh"
     master.vm.provision "file", source: "common_asp_dotnet5.sh", destination: "/tmp/user-shell/common_asp_dotnet5.sh"
-    master.vm.provision "shell", path: "parts_unlimited.sh"
+    master.vm.provision "file", source: "NuGet.Config", destination: "/tmp/user-shell/NuGet.Config"
+    master.vm.provision "file", source: "inventory_project.json", destination: "/tmp/user-shell/inventory_project.json"
+    master.vm.provision "shell", path: "parts_unlimited.sh", privileged: false
   end
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs

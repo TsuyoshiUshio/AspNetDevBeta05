@@ -1,6 +1,6 @@
 sudo ntpdate ntp1.jst.mfeed.ad.jp
 
-sudo apt-get -y update
+sudo apt-get update
 sudo apt-get -y install language-pack-ja
 
 export LC_CTYPE="ja_JP.UTF-8"
